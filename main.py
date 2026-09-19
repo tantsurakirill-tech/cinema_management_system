@@ -16,6 +16,20 @@ def show_movies(movies: list[dict[str | int, str]]) -> None:
         )
 
 
+def search_to_title(string: str) -> list[dict[str, str | int]]:
+    result = []
+
+    for movie in movies:
+        if string.lower().strip() in movie['title'].lower():
+            result.append(movie)
+
+    print(f'Количество найденных фильмов: {len(result)}')
+    return sorted(result, key=lambda x: x['rating'])
+
+
 show_movies(movies)
 
 print('Добро пожаловать в кинотеатр!')
+
+found = search_to_title(' интер')
+show_movies(found)
