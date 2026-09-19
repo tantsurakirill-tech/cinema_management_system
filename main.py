@@ -22,7 +22,7 @@ def search_to_title(string: str) -> list[dict[str, str | int]]:
         if string.lower().strip() in movie['title'].lower():
             result.append(movie)
 
-    return result
+    return sorted(result, key=lambda x: x['rating'])
 
 
 show_movies(movies)
