@@ -17,3 +17,5 @@ def show_movies(movies: list[dict[str | int, str]]) -> None:
 
 
 show_movies(movies)
+
+print('Добро пожаловать в кинотеатр!')
